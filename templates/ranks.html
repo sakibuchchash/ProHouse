@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block title %}Ranks{% endblock %}
+
+ {% block content %}
+<style>
+a button
+{
+  -webkit-transition-duration: 0.8s; /* Safari */
+    transition-duration: 0.1s;
+    background-color: #f68b1f;
+     opacity: 0.6;
+}
+a button:hover {
+    opacity: 1;
+}
+</style>
+<h2 style=" margin: 0px; text-align: center;"><b>Programmers Rank</b></h2>
+<br>
+<ul>
+<a href="/update/" ><button title="Update Ranks" class="btn" style="float: right; "><b class="glyphicon glyphicon-refresh"></b></button></a>
+<br>
+<br>
+<div class="blog-con"> 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+      	<th>Rank</th>
+        <th>Username</th>
+        <th>Codeforces Rating</th>
+        <th>Codechef Rating</th>
+      </tr>
+    </thead>
+     <tbody style="font-family: Georgia">
+    {% for post in posts %}
+      <tr>
+
+        <td>{{forloop.counter}}</td>
+        <td><a href="/profile/{{post.username}}">{{post.username}}</a></td>
+        <td>{{post.codeforces_Rating}}</td>
+        <td>{{post.codechef_Rating}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+</ul>
+<br><br><br><br>
+{% endblock %}
+

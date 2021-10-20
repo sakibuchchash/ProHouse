@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block title %}Guideline/Tips{% endblock %}
+
+ {% block content %}
+<style>
+.btn-teacher:hover
+{
+color: black;
+}
+
+</style>
+<h2 style="margin: 0px; text-align: center;"><b>Guidelines & Tips</b></h2>
+<ul>
+  <a style="background-color: #555; " href="{% url 'train' %}" class="btn btn-teacher btn-lg" role="button">Tips</a>
+  <a style="background-color: #555; " href="{% url 'teachers' %}" class="btn btn-teacher btn-lg" role="button">Teachers</a>
+  <br><br>
+  {% for post in posts %}
+  {% if post.author %}
+     <div class="blog-con">
+       {% if user.is_teacher %}
+      <a href="{{post.id}}/edit/" style="float: right; margin: 20px;"><i title="Edit Tips" class="glyphicon glyphicon-edit"></i></a>
+      {% endif %}
+
+     <h2 style="font-family:'Arial, Helvetica, sans-serif';font-size: 30px;" class="blog-post-title">{{post.title}}</h2>
+      <img style="border-radius: 50%;" src="https://pikmail.herokuapp.com/{{post.author.email}}?size=35" aria-hidden="true">
+      <b style="color:red;"><a href="/profile/{{post.author}}/">{{post.author}}</a></b>&nbsp;&nbsp;<small>{{post.created_date}}</small>
+      <hr style="border: 1px solid #dddddd; margin: 0px;" >
+      <br>
+    
+      <ul id="pq"><font style="font-family:'Arial, Helvetica, sans-serif'; font-size: 19px"><p>{{post.text|linebreaksbr}}</p>&emsp;</font>
+      <b style="color: #3366FF"><a href="{{post.link}}">{{post.link}}</a></b>
+      </ul>
+
+      <br>
+    </div>
+</ul>
+    <br>
+    {% endif %}
+  {% endfor %}
+  {% if user.is_teacher %}  
+  <div class="mybutton">
+  <a href="./new/"><button title="Create New Tips" type="button" class="btn btn-circle btn-lg" style="position: relative;"><i class="glyphicon glyphicon-plus"></i></button></a>
+</div>
+<br><br><br><br>
+  {% endif %}
+  
+
+{% endblock %}
+

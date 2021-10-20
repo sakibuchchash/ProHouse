@@ -1,0 +1,200 @@
+ {% load static %}
+<!DOCTYPE html>
+<html >
+<head>
+
+  <!-- Site made with Mobirise Website Builder v4.8.4, https://mobirise.com -->
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  
+    <title>{% block title %}Programmer's House{% endblock %}</title>
+
+    {% if user.is_authenticated and user.is_teacher %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/teachers.css' %}">
+    {% else %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/students.css' %}">
+    {% endif %}
+
+    <link rel="shortcut icon" href="{% static 'assets/images/6-192x171.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'assets/web/assets/mobirise-icons/mobirise-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/tether/tether.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/gdpr-plugin/gdpr-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/socicon/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/animatecss/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/dropdown/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/theme/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+
+</head>
+<body>
+
+{% block nav %}<!--  ##########################    Block For Home Page Navbar  ##################################   -->
+<section class="menu cid-qTkzRZLJNu" once="menu" id="menu1-0">
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="{% url 'login' %}">
+                         <img src="{% static 'assets/images/6-192x171.png' %}" alt="" title="" style="height: 4.3rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-5" href="{% url 'home' %}">
+                        ProHouse</a></span>
+            </div>
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/posts/">DashBoard</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/contests/">Contests</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/ranks/">Ranks</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/programmers/">Programmers</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/train/">Training</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link link text-white dropdown-toggle display-4" href="" data-toggle="dropdown-submenu" aria-expanded="false">Profile</a>
+                    <div class="dropdown-menu">
+                        {% if user.is_student %}
+                        <a class="text-white dropdown-item display-4" href="/profile/{{user}}/">My Profile</a>
+                        <a class="text-white dropdown-item display-4" href="/{{user}}/profile_edit/">Update</a>
+                        {% else %}
+                        <a class="text-white dropdown-item display-4" href="/teacher/profile/{{user}}/">My Profile</a>
+                        <a class="text-white dropdown-item display-4" href="/teacher/{{user}}/profile_edit/">Update</a>
+                        {% endif %}
+                        <a class="text-white dropdown-item display-4" href="{% url 'logout' %}">LogOut</a>
+                    </div>
+                </li>
+                
+                <div class="navbar-buttons mbr-section-btn">
+                    <a class="btn btn-sm btn-danger-outline display-7" href=""><span style="font-size: 20px;" class="mbrib-alert " ></span></a>
+                </div>
+                    {% else %}
+                 <div class="navbar-buttons mbr-section-btn">
+                    <a class="btn btn-sm btn-primary display-7" href="{% url 'login' %}">LogIn</a>
+                    <a class="btn btn-sm btn-white-outline display-7" href="{% url 'signup' %}">SignUP</a>
+                </div>
+                 {% endif %}
+            </ul>
+            
+        </div>
+    </nav>
+</section>
+
+<!--section class="engine"><a href="https://google.com"></a></section-->
+
+<section class="mbr-section article content10 cid-r5if80RpHz" id="content10-1h">
+    <div class="container">
+        <div class="inner-container" style="width: 86%;">
+            <hr class="line" style="width: 61%;">
+            <div class="section-text align-center mbr-white mbr-fonts-style display-5">NEWS FEED</div>
+            <hr class="line" style="width: 61%;">
+        </div>
+    </div>
+</section>
+
+ {% endblock %}<!--  ##########################    EnD Block  ##################################   -->
+
+
+{% block content %}
+
+
+    
+
+
+{% endblock %}
+
+
+<section class="cid-r5euBtiEn9 " id="footer5-c">
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-md-3">
+                <div class="media-wrap">
+                           <img src="{% static 'assets/images/log1-192x192.png' %}" alt="" title="ProHouse">
+                    
+                </div>
+            </div>
+            <div class="col-md-9">
+                <p class="mbr-text align-right links mbr-fonts-style display-7">
+                    <a href="{% static 'assets/files/ioi-syllabus-2018.pdf' %}" target="_blank" class="text-white">ABOUT &nbsp;&nbsp;&nbsp;&nbsp;
+</a>                    <a href="{% static 'assets/files/ioi-syllabus-2018.pdf' %}" target="_blank" class="text-white">TERMS&nbsp; &nbsp; &nbsp; </a><a href="http://www.codeforces.com" target="_blank" class="text-white">LINKS &nbsp; &nbsp;</a><a href="mailto:sadrul.islamt@gmail.com" class="text-white">CONTACT</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-lower">
+            <div class="media-container-row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="media-container-row mbr-white">
+                <div class="col-md-6 copyright">
+                    <p class="mbr-text mbr-fonts-style display-7"><strong>
+                        © Copyright 2017 ProHouse- All Rights Reserved
+                    </strong></p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-list align-right">
+                        <div class="soc-item">
+                            <a href="" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="{% static 'assets/web/assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/popper/popper.min.js' %}"></script>
+  <script src="{% static 'assets/tether/tether.min.js' %}"></script>
+  <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/cookies-alert-plugin/cookies-alert-core.js' %}"></script>
+  <script src="{% static 'assets/cookies-alert-plugin/cookies-alert-script.js' %}"></script>
+  <script src="{% static 'assets/viewportchecker/jquery.viewportchecker.js' %}"></script>
+  <script src="{% static 'assets/dropdown/js/script.min.js' %}"></script>
+  <script src="{% static 'assets/touchswipe/jquery.touch-swipe.min.js' %}"></script>
+  <script src="{% static 'assets/mbr-tabs/mbr-tabs.js' %}"></script>
+  <script src="{% static 'assets/smoothscroll/smooth-scroll.js' %}"></script>
+  <script src="{% static 'assets/parallax/jarallax.min.js' %}"></script>
+  <script src="{% static 'assets/theme/js/script.js' %}"></script>
+  
+  
+
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
+    <input name="animation" type="hidden">
+  <input name="cookieData" type="hidden" data-cookie-text="We use cookies to give you the best experience. Read our <a href='privacy.html'>cookie policy</a>.">
+  </body>
+</html>

@@ -1,0 +1,441 @@
+.logo {
+  font-family: 'Clicker Script', cursive;
+}
+
+.logo a {
+  color: white;/*#212529;*/
+  text-decoration: none;
+}
+
+.list-group-formset label {
+  display: none;
+}
+
+.list-group-formset .form-group,
+.list-group-formset .invalid-feedback {
+  margin-bottom: 0;
+}
+
+.list-group-formset .form-control {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
+
+.btn-student {
+  color: #fff;
+  background-color: #91afb6;
+  border-color: #91afb6;
+}
+
+.btn-student:hover,
+.btn-student:active {
+  color: #fff;
+  background-color: #608993;
+  border-color: #608993;
+}
+
+.btn-teacher {
+  color: #fff;
+  background-color: #8980a5;
+  border-color: #8980a5;
+}
+
+.btn-teacher:hover,
+.btn-teacher:active {
+  color: #fff;
+  background-color: #66598B;
+  border-color: #66598B;
+}
+
+.has-danger .radio,
+.has-danger .checkbox {
+  color: #dc3545;
+}
+
+.has-danger .invalid-feedback {
+  display: block;
+}
+
+
+.txt-rt{text-align:right;}
+.txt-lt{text-align:left;}
+.txt-center{text-align:center;}
+.float-rt{float:right;}
+.float-lt{float:left;}
+.clear{clear:both;}
+.pos-relative{position:relative;}
+.pos-absolute{position:absolute;}
+.vertical-base{ vertical-align:baseline;}
+.vertical-top{  vertical-align:top;}
+a{text-decoration:none;}
+
+nav.vertical ul li{ display:block;}
+nav.horizontal ul li{   display: inline-block;}
+img{max-width:100%;}
+
+body
+{
+
+    font-family: 'Open Sans', sans-serif;
+    background-size: cover;
+    background-color: #e0e0e0;
+}
+
+h1 
+{
+    font-size: 3em;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+    font-family: 'Old Standard TT', serif;
+    letter-spacing: 5px;
+}
+
+
+a
+{
+    text-decoration: none;
+    color:inherit;
+}
+a:hover
+{
+    text-decoration: none;
+    color:#808080;
+}
+
+a.link-box
+{
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+body .row 
+{
+    margin-left: 0;
+    margin-right:0;
+}
+#header
+{
+    position: static;
+    border: none;
+}
+#top_heading 
+{
+
+    background: #39050b;    /* #39050b; Rustic Red  */
+    margin-top: 0 !important;
+    border-bottom: 5px solid #f68b1f;
+}
+#top_heading .logo 
+{
+    margin: 8px 0 9px 6px;
+    float:left;
+}
+#top_heading form
+{
+    margin:17px -14px 0 0;
+}
+
+.form-search .form-control
+{
+    height: 36px!important;
+}
+
+
+.form-search #searchsubmit
+{
+    background: #f68b1f url(http://cse.uiu.ac.bd/wp-content/themes/dept-cse/images/mg-glass.png) center no-repeat;
+
+    width: 36px;
+    height: 36px;
+    box-shadow: none;
+    border-radius: 0px;
+    border-color: #f68b1f;
+    position: relative;
+    z-index: 3;
+
+}
+
+.form-search #searchsubmit > span
+{
+    opacity: 0;
+}
+.form-search
+{
+    max-width: 270px;
+    float: right;
+}
+.pull-right 
+{
+    float: right!important;
+}
+
+div 
+{
+    display: block;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+/*------------------navbar------------------*/
+#nav
+{
+    background-color: #ffecb3;
+    width: 100%;
+    float: left;
+    margin: 0 0 1em 0;
+    padding: 0;
+    border-radius: 0px;
+    border-bottom: 1px solid #ccc;
+}
+.glyphicon
+{
+    text-decoration-style: bold;
+}
+#log
+{
+    float: left;
+}
+
+.container
+{
+    background-color:  ;
+}
+.content
+{
+    background-color:; /*rgb(220,220,220);*/
+}
+
+/*-- //responsive-design --*/
+
+.blog-con
+{
+
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 1px;
+
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 6px 16px 0 rgba(115,143,147,.4);
+    margin: 0px;
+
+}
+
+.blog-con:hover
+{
+  box-shadow: 0 6px 16px 0 rgba(115,143,147,.8);
+
+}
+.box-header
+{
+    border-top: 5px solid #f68b1f;
+    border-color: #3659a2 !important;
+}
+
+.blog-con #pq
+{
+    padding-left: 1px;
+    border-left: 6px solid #1c2a48;
+    height: auto;
+}
+
+.blog-con #pq p
+{
+    padding-left: 0.5cm;
+}
+
+
+---    Drop Button ---- 
+.right-corder-container
+{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+}
+
+.mybutton
+{
+    position: fixed;
+    right:20px;
+    bottom:20px;
+}
+
+
+.btn-circle
+{
+
+    background-color:#f68b1f;
+    opacity: 1;"
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+.btn-circle:hover
+{
+    color:white;
+
+}
+.btn-circle.btn-lg
+{
+
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+
+}
+.post-form
+{
+
+
+}
+
+.bor
+{
+  padding: 30px;
+
+}
+
+.topnav a {
+  color: #A9A9A9;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 16px;
+}
+.topnav
+{
+  padding-bottom:none; 
+  padding-top:none;
+
+}
+.topnav .icon {
+  display: none;
+  background-color: #333;
+}
+
+
+.topnav a:hover{
+  background-color: #555;
+  color: white;
+}
+.dropdown
+{
+    float: right;
+}
+
+.dropdown-menu
+{
+
+  background-color: #999;
+  text-align: center;
+  font-size: 10px;
+
+}
+
+@media screen and (max-width: 1000px) {
+
+ .name a
+ {
+  float: right;
+ } 
+.dropdown
+{
+ background-color: #333;
+}
+
+.topnav a:hover{
+
+}
+
+.topnav
+{
+  padding-bottom:none; 
+  padding-top:none;
+  background-color: #333;
+}
+.topnav a{
+    display: none;
+    color:white;
+  }
+.topnav a.icon {
+    float: left;
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive  {float: none;}
+  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* ------------------ footer --------------
+#footer
+{
+    background: #3d3027 url(../images/b_u.png)  
+    padding: 300px 0 0;
+    overflow: hidden;
+    color: #f2f2f2;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.footer-i 
+{
+    background: url(../images/b.png) repeat-x 0 100%;
+    padding: 0 0 24px;
+}
+.foot_logo
+{
+    display: block;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 20px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+    
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+.foot_logo img
+{
+    vertical-align: middle;
+}
+*/

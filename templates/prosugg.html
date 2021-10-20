@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Accepted Graph{% endblock %}
+
+ {% block content %}
+ <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+  <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+<h2  style="color:  font-size: 37px; text-align: center;">Graph For Accepted Problems of &nbsp;<b>{{pro.first_name}} {{pro.last_name}}</b></h2>
+<br>
+ <div id="myFirstchart-container">{{ output|safe }}</div>
+<br><br><br><br>
+{% endblock %}

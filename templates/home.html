@@ -1,0 +1,259 @@
+{% extends 'layout.html' %}
+ {% load static %}
+
+{% block nav %}<!--  ##########################    Block For Home Page Navbar  ##################################   -->
+
+<section class="menu cid-qTkzRZLJNu" once="menu" id="menu1-0">
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="{% url 'home' %}">
+                    	<img src="{% static 'assets/images/6-192x171.png' %}" alt="" title="" style="height: 4.3rem;">
+                    </a>
+                </span>
+
+                <span class="navbar-caption-wrap">
+                	<a class="navbar-caption text-white display-5" href="{% url 'home' %}">
+                        ProHouse
+                    </a>
+                </span>
+            </div>
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+
+               
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/posts/">DashBoard</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/contests/">Contests</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/ranks/">Ranks</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/programmers/">Programmers</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/train/">Training</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link link text-white dropdown-toggle display-4" href="https://mobirise.com" data-toggle="dropdown-submenu" aria-expanded="false">Profile</a>
+                    <div class="dropdown-menu">
+                        {% if user.is_student %}
+                        <a class="text-white dropdown-item display-4" href="/profile/{{user}}/">My Profile</a>
+                        <a class="text-white dropdown-item display-4" href="/{{user}}/profile_edit/">Update</a>
+                        {% else %}
+                        <a class="text-white dropdown-item display-4" href="/teacher/profile/{{user}}/">My Profile</a>
+                        <a class="text-white dropdown-item display-4" href="/teacher/{{user}}/profile_edit/">Update</a>
+                        {% endif %}
+                        <a class="text-white dropdown-item display-4" href="https://mobirise.com">LogOut</a>
+                    </div>
+                </li>
+                
+                <div class="navbar-buttons mbr-section-btn">
+                    <a class="btn btn-sm btn-danger-outline display-7" href=""><span style="font-size: 20px;" class="mbrib-alert " ></span></a>
+                </div>
+                    {% else %}
+                 <div class="navbar-buttons mbr-section-btn">
+                    <a class="btn btn-sm btn-primary display-7" href="{% url 'login' %}">LogIn</a>
+                    <a class="btn btn-sm btn-white-outline display-7" href="{% url 'signup' %}">SignUP</a>
+                </div>
+                 {% endif %}
+
+        </ul>
+
+        </div>
+    </nav>
+</section>
+
+{% endblock %}<!--  ##########################    EnD Block  ##################################   -->
+
+
+{% block content %}
+
+
+<section class="header1 cid-r5eiATiXq5 mbr-parallax-background" id="header1-7">
+<div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(0, 0, 0);">
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
+                    Programmers House</h1>
+                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">A Platform to Unite&nbsp;<strong>UIU</strong>’s Programmers</h3>
+                
+                <div class="mbr-section-btn align-center"><a class="btn btn-md btn-white-outline display-7" href="/posts/"><span class="mbri-rocket mbr-iconfont mbr-iconfont-btn"></span>START</a></div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="tabs1 cid-r5ewqU4RcM mbr-parallax-background" id="tabs1-e">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);">
+    </div>
+    <div class="container">
+        <h2 class="mbr-white align-center pb-5 mbr-fonts-style mbr-bold display-2">Auto &nbsp;Online Judge Rank Updates&nbsp;</h2>
+        <div class="media-container-row">
+            <div class="col-12 col-md-8">
+                <ul class="nav nav-tabs" role="tablist">
+                    <!--li class="nav-item"><a class="nav-link mbr-fonts-style active display-7" role="tab" data-toggle="tab" href="/ranks/">Get Started</a></li-->
+                    <li><a style="font-size: 15px;" class="btn btn-md btn-white-outline display-7" href="/ranks/">Get Started</a></li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane in active" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="mbr-text py-5 mbr-fonts-style display-7">In This Site You'll get Update of Your Online Judges [  Codeforces, Codechef ] Ratings&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tabs1 cid-r5eysoDZc8 mbr-parallax-background" id="tabs1-g">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(0, 0, 0);">
+    </div>
+    <div class="container">
+        <h2 class="mbr-white align-center pb-5 mbr-fonts-style mbr-bold display-2">Accepted Problems Analysis</h2>
+        <div class="media-container-row">
+            <div class="col-12 col-md-8">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li><a class="btn btn-md btn-white-outline display-7" href="/oneshadab/suggetion/">Get Started</a></li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane in active" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="mbr-text py-5 mbr-fonts-style display-7">In This Site You Can See &nbsp;Your Online Judges [ Codeforces, Codechef ] Solved Problems Statistics</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tabs1 cid-r5eBCSqasZ mbr-parallax-background" id="tabs1-i">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(0, 0, 0);">
+    </div>
+    <div class="container">
+        <h2 class="mbr-white align-center pb-5 mbr-fonts-style mbr-bold display-2">&nbsp;Problems Suggestions</h2>
+        <div class="media-container-row">
+            <div class="col-12 col-md-8">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li><a class="btn btn-md btn-white-outline display-7" href="/oneshadab/list/">Get Started</a></li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane in active" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="mbr-text py-5 mbr-fonts-style display-7">In This Site You'll Get &nbsp;Bunch of Problems Suggestions &nbsp;From Online Judges [ Codeforces, Codechef ] Which will Be Best For You !&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tabs1 cid-r5eCBiwddG mbr-parallax-background" id="tabs1-j">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(0, 0, 0);">
+    </div>
+    <div class="container">
+        <h2 class="mbr-white align-center pb-5 mbr-fonts-style mbr-bold display-2">Regular Contests and News Updates</h2>
+        <div class="media-container-row">
+            <div class="col-12 col-md-8">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li><a class="btn btn-md btn-white-outline display-7" href="/contests/">Get Started</a></li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane in active" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="mbr-text py-5 mbr-fonts-style display-7">In This Site You'll Find Important Notices and Contest Update</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-r5fLr3csuV" id="video1-14">
+
+    
+    
+    <figure class="mbr-figure align-center">
+        <div class="video-block" style="width: 66%;">
+            <div><iframe class="mbr-embedded-video" src="https://www.youtube.com/embed/O7TIABdi-dk?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0" width="1280" height="720" frameborder="0" allowfullscreen></iframe></div>
+        </div>
+    </figure>
+</section>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %}Post Update{% endblock %}
+
+
+ {% block content %}
+
+            <div class="col-6">
+              <h1 class="logo">
+                <a href="{% url 'home' %}">
+                                House post
+                  {% if user.is_authenticated %}
+                    {% if user.is_teacher %}
+                      <span class="icon-feather" data-toggle="tooltip" data-placement="right" title="Teacher profile"></span>
+                    {% else %}
+                      <span class="icon-graduation-cap" data-toggle="tooltip" data-placement="right" title="Student profile"></span>
+                    {% endif %}
+                  {% endif %}
+                </a>
+              </h1>
+            </div>
+     <div class="blog-con box-header">
+    <form method="POST"  class="post-form">
+
+        {% csrf_token %}
+        {{ form.as_p}}
+
+        <button type="submit" class="btn" style=" background-color:#f68b1f; opacity: 0.9;" >Save</button>
+    </form>
+    <br>
+</div>
+    <d>
+    	
+    	<!--button type="submit" class="btn" style="background-color:#f68b1f; opacity: 0.9;" >Delete</button-->
+    </d>
+    <br><br><br><br>
+{% endblock %}

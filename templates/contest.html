@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+{% block title %}Contest{% endblock %}
+ {% block content %}
+<style >
+  .blog-c
+{
+    padding-top: 1px;
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 6px 16px 0 rgba(115,143,147,.4);
+  }
+  th,td,tr{
+    text-align: center;
+}
+</style>
+
+<h2 style="text-align: center;"><b>Contests</b></h2>
+<br>
+
+<div class="blog-c"> 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Tilte<i style="padding-left: 130px;"></i></th>
+        <th>Contest&nbsp;link</th>
+        <th>Editorial&nbsp;link</th>
+        <th>Date<a style="padding-left: 100px;"></a></th>
+       <th>Author</th>
+
+      </tr>
+    </thead>
+     <tbody>
+   {% for post in posts %}
+	{% if post.author %}
+	{% if post.is_contest %}
+      <tr>
+        
+        <td><samp >{{post.title}}</samp></td>
+        <td style="color: #3366FF;"><a href="{{post.link}}" target="_blank"><samp>{{post.link}}</samp></a></td>
+        
+        <td style="color: #3366FF;"><a href="{{post.soln}}" target="_blank"><samp>{{post.soln}}</samp></a></td>
+        <td><samp>{{post.created_date|date:"h:m,M'd"}}</samp></td>
+        <td>{{post.author}}</td>
+        {% if user.is_teacher %}
+        <td ">
+      <a href="{{post.id}}/edit" style="margin:0px;"><i title="Edit Tips" class="glyphicon glyphicon-edit"></i></a>
+</td>
+{% endif %}
+      </tr>
+     {% endif %}
+	{% endif %}
+	{% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+
+{% if user.is_teacher %}	
+<!--div class="mybutton">
+	<a href="./new/"><button type="button" class="btn btn-circle btn-lg" style="position: relative;"><i class="glyphicon glyphicon-book"></i></button></a>
+</div-->
+{% endif %}
+
+
+<br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+ {% load static %}
+{% block title %}{{user.username}}{% endblock %}
+
+ {% block content %}
+<style>
+a button
+{
+  -webkit-transition-duration: 0.8s; /* Safari */
+    transition-duration: 0.1s;
+    background-color: #f68b1f;
+     opacity: 0.6;
+}
+a button:hover {
+    opacity: 1;
+}
+</style>
+{% if pro.is_student %}
+<a href="/proupdate/{{pro.username}}"><button title="Update Ranks" class="btn" style=" margin: 10px; float: right;"><i class="glyphicon glyphicon-refresh"></i></button></a>
+
+<a href="/{{pro.username}}/suggetion/"><button title="Accepted Graph" class="btn" style=" margin: 10px; float: right;"><i class="glyphicon glyphicon-equalizer"></i></button></a>
+
+<a href="/{{pro.username}}/list/"><button title="Problem Suggetion" class="btn" style=" margin: 10px; float: right;"><i class="glyphicon glyphicon-tasks"></i></button></a>
+{% endif %}
+<div style=" margin: 0px; background-color: white; padding-left: 30px;padding-right: 500px; padding-top: 1px;border-radius: 4px;">
+	<img  src="https://pikmail.herokuapp.com/{{email}}?size=230" alt="Profile Picture">
+
+<h3 style="font-family:'Georgia';font-size: 30px;">{{username}}</h3>
+
+	{% if pro.is_student %}
+	 <pre style="margin: 5px; font-family:'Georgia'; font-size: 17px;">{{id_title}}&emsp;{{student_Id}}</pre>
+	 <pre style="margin: 5px; font-family:'Georgia'; font-size: 17px;">Name:&emsp;{{first_name}}  {{last_name}}</pre>
+	 <pre style="margin: 5px; font-family:'Georgia'; font-size: 17px;">Email:&emsp;{{email}}</pre>
+	 <pre style="margin: 5px; font-family:'Georgia'; font-size: 17px;">Contact No:&emsp;{{mobile_No}}</pre>	
+	 <br>
+	 <pre style=" margin: 5px; font-family:'Georgia'; font-size: 17px;"><img  height="20" width="20" src="//st.codeforces.com/s/87890/favicon.png" alt="CodeForces">  {{cf_title}} <a href="https://codeforces.com/profile/{{pro.codeforces_Handle}}" target="_blank"><b>{{codeforces}}</a><sub> (max. {{pro.codeforces_MaxRating}})</sub></b></pre>
+	 <pre style="margin: 5px; font-family:'Georgia'; font-size: 17px;"><img height="25" width="25" src="https://s3.amazonaws.com/codechef_shared/sites/default/files/uploads/pictures/a043d744daa2eb0a884ddb28e760c464.jpeg" alt="CodeChef"> {{cc_title}}<a href="https://www.codechef.com/users/{{pro.codechef_Handle}}"target="_blank"><b>{{codechef}}</b></a></pre>
+
+	 {% else %}
+	 <pre style="margin: 5px; font-family:'Georgia'; font-size: 17px;">Name:&emsp;{{first_name}}  {{last_name}}</pre>
+	 <pre style="margin: 5px; font-family:'Georgia'; font-size: 17px;">Email:&emsp;{{email}}</pre>
+	 <pre style="margin: 5px; font-family:'Georgia'; font-size: 17px;">Contact No:&emsp;{{mobile_No}}</pre>	
+	 {% endif %}
+	 <br>
+</div>
+<br><br><br><br>
+{% endblock %}

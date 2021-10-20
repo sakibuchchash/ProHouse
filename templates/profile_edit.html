@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile Update{% endblock %}
+
+
+{% load crispy_forms_tags %}
+ {% block content %}
+  <h2>Profile Update</h2>
+  <form method="post" novalidate >
+
+    {% csrf_token %}
+   
+    {{ form|crispy }}
+
+    {% if user.is_authenticated %}
+    <span class="glyphicon glyphicon-lock" aria-hidden="true"> </span> change password <button type="submit" class="btn btn-warning">
+    {% if user.is_student %} 
+    <a href="/{{ user }}/profile_edit/Password/">
+    {% else %}
+     <a href="/teacher/{{ user }}/profile_edit/Password/">
+    {% endif %}
+    Change</a></button>
+    {% endif %}
+    <br>
+    
+    {% if form.errors %}
+    <h5 style="color:purple"> This fields are required :</h5>
+     {% for error in form.errors %}
+     <pre style="color: red ; background-color:#e0e0e0;">{{ error }}</pre>
+     {% endfor %}
+    {% endif %}
+  
+    <input type="submit" class="btn btn-success" value="Update">
+  </form>
+
+{% endblock %}

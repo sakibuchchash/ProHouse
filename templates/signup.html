@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block title %}Sign Up{% endblock %}
+ {% block content %}
+ <h2 style="text-align:center"><mark>Sign up</mark></h2>
+<br><br>
+<ul style="padding-left: 360px;">
+  <a  href="{% url 'student_signup' %}" class="btn btn-student btn-lg" role="button">Student</a>
+  <a  href="{% url 'teacher_signup' %}" class="btn btn-teacher btn-lg" role="button">Teacher</a>
+ </ul>
+ <br><br><br><br>
+{% endblock %}

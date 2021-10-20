@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block title %}Posts{% endblock %}
+ {% block content %}
+<style>
+a button
+{
+  -webkit-transition-duration: 0.8s; /* Safari */
+    transition-duration: 0.1s;
+    background-color: #f68b1f;
+     opacity: 0.7;
+}
+a button:hover {
+    opacity: 1;
+}
+</style>
+ 
+<br>
+		<div class="blog-con box-header">
+			<br>
+			<a href="/posts" ><button class="btn" style="padding-top:0px;padding-left: 2px; margin: 0px; width: 20px;height: 18px;"><i class="glyphicon glyphicon-arrow-left"></i></button></a>
+			{% if user.is_teacher %}
+			<!--div style="float: right ;"><button class="btn" style="background-color:#f68b1f; opacity: 0.9;"><a href="./edit/"><b>edit</b></a></button></div-->
+			 <a data-toggle="collapse" href="#demo" style="margin: 0px; padding-right: 5px; float: right;"><b class="caret"></b><div style="" id="demo" class="collapse"><a href="./edit/" style="float: right; margin: 0px;">edit</a></div></a>
+			{% endif %}
+			<h3 class="blog-post-title" style="font-family:'Lobster';font-size: 30px;">{{post.title}}</h3>
+			<img aria-hidden="true" style="border-radius: 50%;" src="https://pikmail.herokuapp.com/{{post.author.email}}?size=50" >
+			<b style="color:red;"><a href="/profile/{{post.author}}/">{{post.author}}</a></b>&nbsp;&nbsp;<small>{{post.created_date}}</small>
+			<hr style="border: 1px solid #dddddd; margin: 0px;" >
+				<br>
+				<p>
+					<font style="font-size: 20px">{{post.text|linebreaksbr}}</font>
+				</p>
+				
+			
+			<br>
+		</div>
+		<br>
+		<br><br><br>
+{% endblock %}

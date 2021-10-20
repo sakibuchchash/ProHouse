@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Problem Suggestions{% endblock %}
+
+ {% block content %}
+  
+
+<style>
+.b
+{
+    width: 500px;
+    border: 2px solid green;
+    padding: 5px;
+    margin: 0px;
+}
+}
+</style>
+
+<h5  style="color:  font-size: 37px; text-align: center;">Codeforces Problem Suggestions For &nbsp;<b>{{pro.first_name}} {{pro.last_name}}</b></h5>
+<br>
+
+{% for a, b in li.items %}
+    <p style="text-align: center; font-size: 30px;"> <mark>{{b}}</mark></p>
+{% endfor %}    
+<h2>Here are Your Problem Suggestions Sequentially Based On Types :</h2>
+{% for k, val in top.items %}
+	<div class="b">
+	{% for key, value in val.items %}
+    <li>{{forloop.counter}}</li><h4><pre>{{value}}</pre></h4>
+
+    {% endfor %}
+	</div>
+   <br><br>
+{% endfor %}
+<br><br><br><br>
+
+{% endblock %}
+
